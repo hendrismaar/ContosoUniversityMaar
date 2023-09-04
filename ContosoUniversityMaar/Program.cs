@@ -6,11 +6,6 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        var host = CreateHostBuilder(args).Build();
-        CreateDbIfNotExists(host);
-
-        host.Run();
-
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
@@ -18,8 +13,9 @@ public class Program
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
         builder.Services.AddDbContext<SchoolContext>(options => options.
         UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
         var app = builder.Build();
+
+        CreateDbIfNotExists(app);
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
