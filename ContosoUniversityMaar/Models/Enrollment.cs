@@ -1,4 +1,6 @@
-﻿namespace ContosoUniversityMaar.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ContosoUniversityMaar.Models
 {
     public enum Grade
     {
@@ -9,7 +11,9 @@
         public int EnrollmentId { get; set; }
         public int CourseId { get; set; }
         public int StudentId { get; set; }
+        [DisplayFormat(NullDisplayText = "No grade")]
         public Grade? Grade { get; set; }
         public Student Student { get; set; }
+        public Course Course { get; set; } 
     }
 }
