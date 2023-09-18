@@ -16,5 +16,10 @@ namespace ContosoUniversityMaar.Controllers
         {
             return View(await _context.Instructors.ToListAsync());
         }
+
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null) { return NotFound(); }
+        //}
     }
 }
