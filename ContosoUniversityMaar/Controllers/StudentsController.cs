@@ -58,26 +58,29 @@ namespace ContosoUniversityMaar.Controllers
             }
             return View(student);
         }
-        public IActionResult Edit(int? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var student =  _context.Students.FindAsync(id);
+            var student = await _context.Students.FindAsync(id);
             if (student == null)
             {
                 return NotFound();
             }
             return View(student);
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id)
-        {
-            if (id == null) { return NotFound(); }
 
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditPost(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
             var studentToUpdate = await _context.Students.FirstOrDefaultAsync(s => s.Id == id);
             if (await TryUpdateModelAsync<Student>(studentToUpdate, "", s => s.FirstMidName,
                 s => s.LastName, s => s.EnrollmentDate))
@@ -89,9 +92,9 @@ namespace ContosoUniversityMaar.Controllers
                 }
                 catch (DbUpdateException)
                 {
-                    ModelState.AddModelError("", "Unable to save changes. "
-                    + "Try again, and if the problem persists"
-                    + "see your system administrator.");
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persist " +
+                        "see your system administrator.");
                 }
             }
             return View(studentToUpdate);
