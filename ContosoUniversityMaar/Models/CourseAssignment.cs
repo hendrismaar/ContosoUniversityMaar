@@ -1,7 +1,11 @@
-﻿namespace ContosoUniversityMaar.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ContosoUniversityMaar.Models
 {
     public class CourseAssignment
     {
+        [Key]
+        public int Id { get; set; }
         public int InstructorID { get; set; }
         public int CourseID { get; set; }
         public Instructor Instructor { get; set; }

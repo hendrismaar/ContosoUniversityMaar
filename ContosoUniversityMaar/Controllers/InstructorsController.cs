@@ -1,13 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ContosoUniversityMaar.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContosoUniversityMaar.Controllers
 {
     public class InstructorsController : Controller
     {
-        public IActionResult Index()
+        private readonly SchoolContext _context;
+        
+        public InstructorsController(SchoolContext context)
         {
-            return View();
+            _context = context;
         }
-
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Instructors.ToListAsync());
+        }
     }
 }

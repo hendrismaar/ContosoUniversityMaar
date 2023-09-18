@@ -29,55 +29,55 @@ namespace ContosoUniversityMaar.Data
             }
             context.SaveChanges();
 
-//            var instructors = new Instructor[]
-//{
-//                new Instructor {FirstMidName = "evil", LastName = "gang", HireDate = DateTime.Parse("1995-03-11")},
-//                new Instructor {FirstMidName = "Dalai", LastName = "Lama", HireDate = DateTime.Parse("1995-03-11")},
-//                new Instructor {FirstMidName = "jeff jeffff jefe jefjeff jeff", LastName = "my nama jeff", HireDate = DateTime.Parse("1995-03-11")},
-//                new Instructor {FirstMidName = "LOL!!!!!!", LastName = "bruger ham sandwich", HireDate = DateTime.Parse("1995-03-11")},
-//};
-//            foreach (Instructor i in instructors)
-//            {
-//                context.Instructors.Add(i);
-//            }
-//            context.SaveChanges();
+            var instructors = new Instructor[]
+{
+                new Instructor {FirstMidName = "evil", LastName = "gang", HireDate = DateTime.Parse("1995-03-11")},
+                new Instructor {FirstMidName = "Dalai", LastName = "Lama", HireDate = DateTime.Parse("1995-03-11")},
+                new Instructor {FirstMidName = "jeff jeffff jefe jefjeff jeff", LastName = "my nama jeff", HireDate = DateTime.Parse("1995-03-11")},
+                new Instructor {FirstMidName = "LOL!!!!!!", LastName = "bruger ham sandwich", HireDate = DateTime.Parse("1995-03-11")},
+};
+            foreach (Instructor i in instructors)
+            {
+                context.Instructors.Add(i);
+            }
+            context.SaveChanges();
 
-//            var departments = new Department[]
-//            {
-//                new Department
-//                {
-//                    Name = "Infotechnology",
-//                    Budget = 0,
-//                    StartDate = DateTime.Parse("2007-09-01"),
-//                    InstructorID = instructors.Single(i => i.LastName == "gang").ID
-//                },
-//                new Department
-//                {
-//                    Name = "How to become Jeff",
-//                    Budget = 0,
-//                    StartDate = DateTime.Parse("2007-09-01"),
-//                    InstructorID = instructors.Single(i => i.LastName == "my nama jeff").ID
-//                },
-//                new Department
-//                {
-//                    Name = "Sucking the tongues of 10 year old Indian kids",
-//                    Budget = 0,
-//                    StartDate = DateTime.Parse("2007-09-01"),
-//                    InstructorID = instructors.Single(i => i.LastName == "Lama").ID
-//                },
-//                new Department
-//                {
-//                    Name = "i have brain damage my head hurts",
-//                    Budget = 0,
-//                    StartDate = DateTime.Parse("2007-09-01"),
-//                    InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
-//                },
-//            };
-//            foreach (Department d in departments)
-//            {
-//                context.Departments.Add(d);
-//            }
-//            context.SaveChanges();
+            var departments = new Department[]
+            {
+                new Department
+                {
+                    Name = "Infotechnology",
+                    Budget = 0,
+                    StartDate = DateTime.Parse("2007-09-01"),
+                    InstructorID = instructors.Single(i => i.LastName == "gang").ID
+                },
+                new Department
+                {
+                    Name = "How to become Jeff",
+                    Budget = 0,
+                    StartDate = DateTime.Parse("2007-09-01"),
+                    InstructorID = instructors.Single(i => i.LastName == "my nama jeff").ID
+                },
+                new Department
+                {
+                    Name = "Sucking the tongues of 10 year old Indian kids",
+                    Budget = 0,
+                    StartDate = DateTime.Parse("2007-09-01"),
+                    InstructorID = instructors.Single(i => i.LastName == "Lama").ID
+                },
+                new Department
+                {
+                    Name = "i have brain damage my head hurts",
+                    Budget = 0,
+                    StartDate = DateTime.Parse("2007-09-01"),
+                    InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
+                },
+            };
+            foreach (Department d in departments)
+            {
+                context.Departments.Add(d);
+            }
+            context.SaveChanges();
 
             var courses = new Course[]
             {
@@ -94,73 +94,73 @@ namespace ContosoUniversityMaar.Data
             }
             context.SaveChanges();
 
-            //            var officeAssignments = new OfficeAssignment[]
-            //{
-            //                new OfficeAssignment()
-            //                {
-            //                    InstructorID = instructors.Single(i => i.LastName == "Lama").ID,
-            //                    Location = "Tibetian mountain range",
-            //                },
-            //                new OfficeAssignment()
-            //                {
-            //                    InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID,
-            //                    Location = "mouth oompf",
-            //                },
-            //                new OfficeAssignment()
-            //                {
-            //                    InstructorID = instructors.Single(i => i.LastName == "gang").ID,
-            //                    Location = "Evil gang lair",
-            //                }
-            //};
-            //            foreach (OfficeAssignment o in officeAssignments)
-            //            {
-            //                context.OfficeAssignments.Add(o);
-            //            }
-            //            context.SaveChanges();
+            var officeAssignments = new OfficeAssignment[]
+{
+                            new OfficeAssignment()
+                            {
+                                InstructorID = instructors.Single(i => i.LastName == "Lama").ID,
+                                Location = "Tibetian mountain range",
+                            },
+                            new OfficeAssignment()
+                            {
+                                InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID,
+                                Location = "mouth oompf",
+                            },
+                            new OfficeAssignment()
+                            {
+                                InstructorID = instructors.Single(i => i.LastName == "gang").ID,
+                                Location = "Evil gang lair",
+                            }
+};
+            foreach (OfficeAssignment o in officeAssignments)
+            {
+                context.OfficeAssignments.Add(o);
+            }
+            context.SaveChanges();
 
-            //            var courseInstructors = new CourseAssignment[]
-            //            {
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Keemia").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "gang").ID
-            //                },
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Riigikaitse").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "gang").ID
-            //                },
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Matemaatika").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "gang").ID
-            //                },
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Keemia").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "Lama").ID
-            //                },
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Programmeerimine").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "Lama").ID
-            //                },
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Matemaatika").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
-            //                },
-            //                new CourseAssignment
-            //                {
-            //                    CourseID = courses.Single(c => c.Title == "Riigikaitse").CourseId,
-            //                    InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
-            //                },
-            //            };
-            //            foreach (CourseAssignment ci in courseInstructors)
-            //            {
-            //                context.CourseAssignments.Add(ci);
-            //            }
-            //            context.SaveChanges();
+            var courseInstructors = new CourseAssignment[]
+            {
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Keemia").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "gang").ID
+                            },
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Riigikaitse").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "gang").ID
+                            },
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Matemaatika").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "gang").ID
+                            },
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Keemia").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "Lama").ID
+                            },
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Programmeerimine").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "Lama").ID
+                            },
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Matemaatika").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
+                            },
+                            new CourseAssignment
+                            {
+                                CourseID = courses.Single(c => c.Title == "Riigikaitse").CourseId,
+                                InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
+                            },
+            };
+            foreach (CourseAssignment ci in courseInstructors)
+            {
+                context.CourseAssignments.Add(ci);
+            }
+            context.SaveChanges();
 
             var enrollments = new Enrollment[]
             {
