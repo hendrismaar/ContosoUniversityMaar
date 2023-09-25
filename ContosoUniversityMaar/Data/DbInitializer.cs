@@ -29,6 +29,13 @@ namespace ContosoUniversityMaar.Data
             }
             context.SaveChanges();
 
+            context.Database.EnsureCreated();
+
+            if (context.Instructors.Any())
+            {
+                return;
+            }
+
             var instructors = new Instructor[]
 {
                 new Instructor {FirstMidName = "evil", LastName = "gang", HireDate = DateTime.Parse("1995-03-11")},
@@ -41,6 +48,13 @@ namespace ContosoUniversityMaar.Data
                 context.Instructors.Add(i);
             }
             context.SaveChanges();
+
+            context.Database.EnsureCreated();
+
+            if (context.Departments.Any())
+            {
+                return;
+            }
 
             var departments = new Department[]
             {
@@ -122,37 +136,37 @@ namespace ContosoUniversityMaar.Data
             {
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Keemia").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Keemia").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "gang").ID
                             },
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Riigikaitse").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Riigikaitse").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "gang").ID
                             },
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Matemaatika").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Matemaatika").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "gang").ID
                             },
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Keemia").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Keemia").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "Lama").ID
                             },
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Programmeerimine").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Programmeerimine").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "Lama").ID
                             },
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Matemaatika").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Matemaatika").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
                             },
                             new CourseAssignment
                             {
-                                CourseID = courses.Single(c => c.Title == "Riigikaitse").CourseId,
+                                CourseId = courses.Single(c => c.Title == "Riigikaitse").CourseId,
                                 InstructorID = instructors.Single(i => i.LastName == "bruger ham sandwich").ID
                             },
             };

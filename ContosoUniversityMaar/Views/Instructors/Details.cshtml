@@ -27,6 +27,36 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.HireDate)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OfficeAssignment)
+        </dt>
+        @{
+            if (Model.OfficeAssignment != null)
+            {
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.OfficeAssignment.Location)
+                </dd>
+            }
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseAssignments)
+        </dt>
+        <dd>
+            @{
+                if (Model.CourseAssignments != null)
+                {
+                    foreach (var item in Model.CourseAssignments)
+                    {
+                        <td>
+                            @Html.DisplayFor(model => item.Course.CourseId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.Course)
+                        </td>
+                    }
+                }
+            }
+        </dd>
     </dl>
 </div>
 <div>
